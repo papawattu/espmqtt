@@ -6,8 +6,9 @@
 #ifndef _MQTT_CONFIG_H_
 #define _MQTT_CONFIG_H_
 
+#ifndef TEST
 #include "sdkconfig.h"
-
+#endif
 #define MQTT_PROTOCOL_311           CONFIG_MQTT_PROTOCOL_311
 #define MQTT_RECONNECT_TIMEOUT_MS   (10*1000)
 

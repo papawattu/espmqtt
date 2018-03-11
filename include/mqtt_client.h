@@ -11,6 +11,13 @@
 #include <stdbool.h>
 #include <string.h>
 
+#ifdef TEST
+typedef int32_t esp_err_t;
+#define CONFIG_MQTT_MAX_HOST_LEN 128
+#define CONFIG_MQTT_MAX_CLIENT_LEN 128
+#define CONFIG_MQTT_MAX_USERNAME_LEN 128
+#define CONFIG_MQTT_MAX_PASSWORD_LEN 128
+#endif
 #include "mqtt_config.h"
 
 typedef struct esp_mqtt_client* esp_mqtt_client_handle_t;
