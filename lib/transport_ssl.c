@@ -180,13 +180,13 @@ static int ssl_write(transport_handle_t t, const char *buffer, int len, int time
     transport_ssl_t *ssl = transport_get_context_data(t);
 
     if ((poll = transport_poll_write(t, timeout_ms)) <= 0) {
-        ESP_LOGW(TAG, "Poll timeout or error, errno=%s, fd=%d, timeout_ms=%d", strerror(errno), ssl->client_fd.fd, timeout_ms);
+    //    ESP_LOGW(TAG, "Poll timeout or error, errno=%s, fd=%d, timeout_ms=%d", strerror(errno), ssl->client_fd.fd, timeout_ms);
         return poll;
     }
     ret = mbedtls_ssl_write(&ssl->ctx, (const unsigned char *) buffer, len);
-    if (ret <= 0) {
-        ESP_LOGE(TAG, "mbedtls_ssl_write error, errno=%s", strerror(errno));
-    }
+    //if (ret <= 0) {
+    //    ESP_LOGE(TAG, "mbedtls_ssl_write error, errno=%s", strerror(errno));
+   // }
     return ret;
 }
 
